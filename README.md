@@ -10,7 +10,7 @@ Sudoko Sat Solver is a solver that trasnfer sudoko into a CNF formula and then s
 
 ## Getting Started
 ### Setup the files
-Copy and past the following commands to allow using `.\file` isntead of `.\file.py`
+Copy and paste the following commands to allow using `.\file` instead of `.\file.py`
 ```
 ln -s sud2sat.py sud2sat
 ln -s sud2sat2.py sud2sat2
@@ -27,7 +27,9 @@ Ensure that minisat is installed, if not found then install it using
 For solving a sudoko, a sudoko should be inputed in a text file with 0's or dots for the unkown, and actual numbers for the knowns. Let's assume you have a `puzzle.txt` file containing the sudoko, and you are using the basic version `sud2sat` and `sat2sud`
 
 Generating a `puzzle.cnf` file having the CNF of the inputed puzzle:
-```./sud2sat puzzle.txt >puzzle.cnf```
+```
+./sud2sat puzzle.txt >puzzle.cnf
+```
 
 Using minisat to solve the CNF generated above:
 ```
@@ -36,7 +38,7 @@ minisat puzzle.cnf assign.txt >stat.txt
 
 Writing the SAT output into `solution.txt` file containg the solved sudoko:
 ```
-./sat2sud <assign.txt >solution.txt
+./sat2sud assign.txt >solution.txt
 ```
 
 Now you have the solved sudoko in `solution.txt`, but you can still see it in the terminal using `cat` command:
