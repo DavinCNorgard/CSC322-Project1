@@ -1,0 +1,9 @@
+*.txt
+*.cnf
+__pycache__
+!sat2sud
+!sat2sud2
+!sat2sud3
+!sud2sat3
+!sud2sat2
+!sud2sat3
