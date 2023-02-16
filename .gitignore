@@ -1,6 +1,6 @@
 *.txt
 *.cnf
-__pycache__
+*pycache*
 !sat2sud
 !sat2sud2
 !sat2sud3
