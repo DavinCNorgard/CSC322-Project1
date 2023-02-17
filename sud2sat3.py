@@ -14,15 +14,11 @@ def main(sudo_file):
                 for l in range(k+1, 10):
                     clauses.append([-sudoco.var(i, j, k), -sudoco.var(i, j, l)])
 
-    # Every number appears at least once in each row
+    # Every number appears at least once in each row and each column
     for i in range(1, 10):
         for k in range(1, 10):
-            clauses.append([sudoco.var(i, j, k) for j in range(1, 10)])
-
-    # Every number appears at least once in each column
-    for j in range(1, 10):
-        for k in range(1, 10):
-            clauses.append([sudoco.var(i, j, k) for i in range(1, 10)])
+            clauses.append([sudoco.var(i, j, k) for j in range(1, 10)]) # row
+            clauses.append([sudoco.var(j, i, k) for j in range(1, 10)]) # column
 
     # Every number appears at least once in each subgrid
     for k in range(1, 10):
