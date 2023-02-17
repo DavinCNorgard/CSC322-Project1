@@ -13,10 +13,10 @@ def main(file_name):
             number = [l.split(" ") for l in context.split("\n")]
 
     if not number or unsolvable:    
-            with open('solution.txt', 'w+') as f:
-                f.write("The sudoku given is unsatisfiable.\n")
-            print("The sudoko is unsolvable")
-            return
+        with open('solution.txt', 'w+') as f:
+            f.write("The sudoku given is unsatisfiable.\n")
+        print("The sudoko is unsolvable")
+        return
 
     solution = []
     for n in number[1]:
