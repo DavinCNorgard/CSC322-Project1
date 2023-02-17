@@ -16,6 +16,7 @@ def main(file_name):
             with open('solution.txt', 'w+') as f:
                 f.write("The sudoku given is unsatisfiable.\n")
             print("The sudoko is unsolvable")
+            return
 
     solution = []
     for n in number[1]:
