@@ -19,7 +19,7 @@ To setup the files, simply run the command
 ```
 make
 ```
-This will unzip the file needed for Extended Task 1 and create a symbolic link for all the python files.
+This will unzip the file needed for Extended Task 1 and create a symbolic link for all the Python files.
 ## Running the Basic Task
 - Ensure that the Sudoku puzzle that will be inputed is in a text file with a 0, ., ∗ or ?
 - There is a sample puzzle provided called `puzzle.txt` 
