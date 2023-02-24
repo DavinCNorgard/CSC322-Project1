@@ -5,7 +5,7 @@ Sudoku Sat Solver is a solver that trasnfer sudoko into a CNF formula and then s
 ## Authors
 - Ahmed Mahmoud [V00936871]
 - Davin Norgard [V00929845]
--
+- Rastin Rashidi [V00963407]
 -
 
 ## Getting Started
@@ -25,7 +25,7 @@ ln -s sat2sud3.py sat2sud3
 Ensure that minisat is installed, if not found then install it using 
 ```sudo apt-get install -y minisat```
 
-## Runing
+## Running
 For solving a sudoku, a sudoku should be inputed in a text file with 0's or dots for the unkown, and actual numbers for the knowns. Let's assume you have a `puzzle.txt` file containing the sudoku, and you are using the basic version `sud2sat` and `sat2sud`
 
 Generating a `puzzle.cnf` file having the CNF of the inputed puzzle:
