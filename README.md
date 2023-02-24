@@ -4,7 +4,7 @@ Sudoko Sat Solver is a solver that trasnfer sudoko into a CNF formula and then s
     
 ## Authors
 - Ahmed Mahmoud [V00936871]
-- 
+- Vladimir Doricic [V00854467]
 -
 -
 
