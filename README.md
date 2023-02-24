@@ -1,6 +1,6 @@
 # Sudoku SAT Solver
-## CSC 322, Proj 1
-Sudoku Sat Solver is a solver that trasnfer sudoko into a CNF formula and then solve it using minisat
+## CSC 322 Project 1
+Sudoku SAT-Solver is a solver that translates a Sudoko puzzle into CNF clauses and produces a solution using minisat.
     
 ## Authors
 - Ahmed Mahmoud [V00936871]
