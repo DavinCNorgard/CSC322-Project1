@@ -9,52 +9,53 @@ Sudoku SAT-Solver is a solver that translates a Sudoko puzzle into CNF clauses a
 -
 
 ## Getting Started
+### Prerequisites
+Ensure that minisat is installed. If not, install it using
+```
+sudo apt-get install -y minisat
+```
 ### Setup the files
-Copy and paste the following commands to allow using `.\file` instead of `.\file.py`
+To setup the files, simply run the command
 ```
-ln -s sud2sat.py sud2sat
-ln -s sud2sat1.py sud2sat1
-ln -s sud2sat2.py sud2sat2
-ln -s sud2sat3.py sud2sat3
-ln -s sat2sud.py sat2sud
-ln -s sat2sud1.py sat2sud1
-ln -s sat2sud2.py sat2sud2
-ln -s sat2sud3.py sat2sud3
+make
 ```
-### Setup Minisat
-Ensure that minisat is installed, if not found then install it using 
-```sudo apt-get install -y minisat```
+This will unzip the file needed for Extended Task 1 and create a symbolic link for all the python files.
+## Running the Basic Task
+- Ensure that the Sudoku puzzle that will be inputed is in a text file with a 0, ., ∗ or ?
+- There is a sample puzzle provided called `puzzle.txt` 
+- For Extended Task 1, there is a `top95.txt` file provided 
+- You are welcome to edit the `puzzle.txt` file or even add your own puzzles!
 
-## Running
-For solving a sudoku, a sudoku should be inputed in a text file with 0's or dots for the unkown, and actual numbers for the knowns. Let's assume you have a `puzzle.txt` file containing the sudoku, and you are using the basic version `sud2sat` and `sat2sud`
-
+### Step 1
 Generating a `puzzle.cnf` file having the CNF of the inputed puzzle:
 ```
 ./sud2sat puzzle.txt >puzzle.cnf
 ```
 
+### Step 2
 Using minisat to solve the CNF generated above:
 ```
 minisat puzzle.cnf assign.txt >stat.txt
 ```
 
-Writing the SAT output into `solution.txt` file containg the solved sudoku:
+### Step 3
+Writing the SAT output into `solution.txt` file containing the solved Sudoku:
 ```
 ./sat2sud assign.txt >solution.txt
 ```
 
-Now you have the solved sudoko in `solution.txt`, but you can still see it in the terminal using `cat` command:
+### Step 4
+Now that you have the solved Sudoku in `solution.txt`, you can view it in the terminal using `cat` command:
 ```
 cat solution.txt
 ```
 
-## Running extended task 1
-Using extended commands for extended task 1 are sightly differnt than the basic task as it involves solving 95 sodoku puzzles instead of one.
+## Running Extended Task 1
+- For Extended Task 1, there is a text file provided called `top95.txt` which contains the top95 Sudoku puzzles. There is 95 lines and each line is a puzzle. You are welcome to edit this file or to add your own to test with!
+- For Extended Task 2 and 3, ensure that the Sudoku puzzle that will be inputed is in a text file with a 0, ., ∗ or ?. We have provided a sample file called `puzzle.txt` but you are welcome to edit this or to add your own puzzle!
+- Ensure that you have ran the `make` command, which unzips the ExtendedTask1Storage.zip
 
-IMPORTANT: before usage, this task requires the executable command `sud2sat`, please run `ln -s sud2sat.py sud2sat` if you have not already created the exectuble. the file `sud2sat1` relies on `sud2sat`.
-
-Start with the text file of all 95 puzzles, in our case this is labelled `top95.txt`
-
+### Extended Task 1
 Now you have to generate cnf files for each puzzle, use the `sud2sat1` command:
 ```
 ./sud2sat1 top95.txt
@@ -67,9 +68,51 @@ Now you can use the `sat2sud1` command to solve and output the corresponding inf
 ./sat2sud1
 ```
 
-You have now solved all the sudokus, there is a `/ExtendedTask1Storage/assigns` directory containing the raw files from each puzzle after calling minisat lablled `(1-95).txt`.  Additionally the `/ExtendedTask1Storage/stats` directory holds the stat files lablled `(1-95).txt` for each puzzle. The solutions are located in the main directory in the file `solutions95.txt`, these solution will be one file line and be orded the same as the input file (`top95.txt`). 
+You have now solved all 95 Sudoku puzzles. There is an `/ExtendedTask1Storage/assigns` directory containing the raw files from each puzzle after calling minisat labeled `(1-95).txt`.  Additionally, the `/ExtendedTask1Storage/stats` directory holds the stat files labeled `(1-95).txt` for each puzzle. The solutions are located in the main directory in the file `solutions95.txt`. The solutions will consist of 95 lines, and each line will contain the solved Sudoku corresponding to the line from the input file `top95.txt`.
 
 Now you have the solved sudoko in `solutions95.txt`, but you can still see it in the terminal using `cat` command:
 ```
 cat solutions95.txt
+```
+
+### Extended Task 2
+Generating a `puzzle.cnf` file having the CNF of the inputed puzzle for the efficient encoding:
+```
+./sud2sat2 puzzle.txt >puzzle.cnf
+```
+
+Using minisat to solve the CNF generated above:
+```
+minisat puzzle.cnf assign.txt >stat.txt
+```
+
+Writing the SAT output into `solution.txt` file containing the solved Sudoku for the efficient encoding:
+```
+./sat2sud2 assign.txt >solution.txt
+```
+
+Now that you have the solved Sudoku in `solution.txt`, you can view it in the terminal using `cat` command:
+```
+cat solution.txt
+```
+
+### Extended Task 3
+Generating a `puzzle.cnf` file having the CNF of the inputed puzzle for the extended encoding:
+```
+./sud2sat3 puzzle.txt >puzzle.cnf
+```
+
+Using minisat to solve the CNF generated above:
+```
+minisat puzzle.cnf assign.txt >stat.txt
+```
+
+Writing the SAT output into `solution.txt` file containing the solved Sudoku for the extended encoding:
+```
+./sat2sud3 assign.txt >solution.txt
+```
+
+Now that you have the solved Sudoku in `solution.txt`, you can view it in the terminal using `cat` command:
+```
+cat solution.txt
 ```
