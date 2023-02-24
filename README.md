@@ -6,7 +6,7 @@ Sudoku SAT-Solver is a solver that translates a Sudoko puzzle into CNF clauses a
 - Ahmed Mahmoud [V00936871]
 - Davin Norgard [V00929845]
 - Rastin Rashidi [V00963407]
--
+- Vladimir Doricic [V00854467]
 
 ## Getting Started
 ### Prerequisites
