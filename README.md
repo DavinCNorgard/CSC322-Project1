@@ -51,7 +51,7 @@ cat solution.txt
 ```
 
 ## Running Extended Task 1
-- For Extended Task 1, there is a text file provided called `top95.txt` which contains the top95 Sudoku puzzles. There is 95 lines and each line is a puzzle. You are welcome to edit this file or to add your own to test with!
+- For Extended Task 1, there is a text file provided called `top95.txt` which contains the top95 Sudoku puzzles. There is 95 lines and each line is a puzzle.
 - For Extended Task 2 and 3, ensure that the Sudoku puzzle that will be inputed is in a text file with a 0, ., ∗ or ?. We have provided a sample file called `puzzle.txt` but you are welcome to edit this or to add your own puzzle!
 - Ensure that you have ran the `make` command, which unzips the ExtendedTask1Storage.zip
 
