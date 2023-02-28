@@ -24,6 +24,7 @@ This will unzip the file needed for Extended Task 1 and create a symbolic link f
 - Ensure that the Sudoku puzzle that will be inputed is in a text file with a 0, ., ∗ or ? for the unknowns.
 - There is a sample puzzle provided called `puzzle.txt`.
 - For Extended Task 1, there is a `top95.txt` file provided.
+
 - You are welcome to edit the `puzzle.txt` file or even add your own puzzles!
 
 ### Step 1
@@ -54,6 +55,7 @@ cat solution.txt
 - For Extended Task 1, there is a text file provided called `top95.txt` which contains the top95 Sudoku puzzles. There are 95 lines and each line is a Sudoku puzzle.
 - For Extended Task 2 and 3, ensure that the Sudoku puzzle that will be inputed is in a text file with a 0, ., ∗ or ? for unknowns. We have provided a sample file called `puzzle.txt` but you are welcome to edit this or to add your own puzzle!
 - Ensure that you have ran the `make` command, which unzips the ExtendedTask1Storage.zip.
+
 
 ### Extended Task 1
 Now you have to generate cnf files for each puzzle, use the `sud2sat1` command:
