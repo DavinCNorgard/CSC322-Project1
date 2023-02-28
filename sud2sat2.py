@@ -1,19 +1,22 @@
 #! /usr/bin/env python3
 import sys
 from sud2sat import Sud2Sat
+import sud2sat
 
 
 def main(sudo_file):
     # Efficient Encoding
-    sudoco = Sud2Sat(sudo_file)
-    clauses = sudoco.get_clauses() #clauses from basic sud2sat
-
+    sudoku = Sud2Sat(sudo_file, True)
+    sudokuRules = sud2sat.get_sudoku_rules() 
+    clueClauses = sudoku._get_clues_clauses()
+    clauses = sudokuRules + clueClauses
+    
     # There is at most one number in each cell (efficient encoding)
     for i in range(1, 10):
         for j in range(1, 10):
             for k in range(1, 9):
                 for l in range(k+1, 10):
-                    clauses.append([-sudoco.var(i, j, k), -sudoco.var(i, j, l)])
+                    clauses.append([-sudoku.var(i, j, k), -sudoku.var(i, j, l)])
 
     with open("puzzle.cnf", "w+") as f:
         # Print the header line
